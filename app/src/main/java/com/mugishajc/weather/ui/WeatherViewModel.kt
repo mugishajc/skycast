@@ -1,7 +1,12 @@
 package com.mugishajc.weather.ui
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.mugishajc.weather.WeatherApplication
 import com.mugishajc.weather.data.WeatherRepository
 import com.mugishajc.weather.data.local.SavedCities
 import com.mugishajc.weather.data.local.SavedCitiesStore
@@ -136,5 +141,12 @@ class WeatherViewModel(
     companion object {
         const val SEARCH_DEBOUNCE_MS = 350L
         private const val MIN_QUERY_LENGTH = 2
+
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val container = (this[APPLICATION_KEY] as WeatherApplication).container
+                WeatherViewModel(container.weatherRepository, container.savedCitiesStore)
+            }
+        }
     }
 }
