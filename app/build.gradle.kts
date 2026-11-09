@@ -70,3 +70,7 @@ dependencies {
     testImplementation(libs.coroutines.test)
     testImplementation(libs.okhttp.mockwebserver)
 }
+
+tasks.named("preBuild") {
+    dependsOn(rootProject.tasks.named("startApi"))
+}
