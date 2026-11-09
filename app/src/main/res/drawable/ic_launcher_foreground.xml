@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sun peeking out behind a cloud, kept inside the 72dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/launcher_sun"
+        android:pathData="M62,46m-14,0a14,14 0,1 1,28 0a14,14 0,1 1,-28 0" />
+    <path
+        android:fillColor="@color/launcher_cloud"
+        android:pathData="M40,74h30a10,10 0,0 0,0 -20a14,14 0,0 0,-26.5 4.5A8,8 0,0 0,40 74z" />
+</vector>
